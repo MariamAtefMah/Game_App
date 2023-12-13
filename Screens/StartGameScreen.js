@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
         elevation: 10, //this elevation make the shadow styles appear on android.
         backgroundColor: 'white',
         padding: 20,
-        borderRadius: 10,
+        borderRadius: 10, // It acts as a styling attribute that controls the curvature of corners.
     },
     buttonConatianer: {
         flexDirection: 'row',
