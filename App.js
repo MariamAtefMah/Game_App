@@ -1,14 +1,46 @@
 import React from "react";
-import { StatusBar } from 'expo-status-bar';
+import { useCallback } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { useFonts } from 'expo-font';
+import * as SplashScreen from 'expo-splash-screen';
 
 //(./Components) means we go to antother folder in the same directory.
 import Header from "./Components/Header";
 import StartGameScreen from "./Screens/StartGameScreen";
+/*
+// Maximallian method to decleare fonts
+const fetchFonts = () => {
+  Font.loadAsync({
+    //'Afacad-Bold' is an identifier.
+    'Afacad-Bold': require('./assets/fonts/Afacad-Bold.ttf'),
+    'Afacad-Italic': require('./assets/fonts/Afacad-Italic.ttf'),
+    'Afacad-Regular': require('./assets/fonts/Afacad-Regular.ttf'),
+  });
+};
+*/
+// Loader screen, start app screen.
+SplashScreen.preventAutoHideAsync();
 
 export default function App() {
+
+  const [fontsLoaded] = useFonts({
+    'Afacad-Bold': require('./assets/fonts/Afacad-Bold.ttf'),
+    'Afacad-Italic': require('./assets/fonts/Afacad-Italic.ttf'),
+    'Afacad-Regular': require('./assets/fonts/Afacad-Regular.ttf'),
+  });
+
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded) {
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]); //if this change the function will run again, otherwise not(Dependancy).
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return (
-    <View style={styles.container}>
+    <View style={styles.container} onLayout={onLayoutRootView}>
       <Header title="Guess a Number"/>
       <StartGameScreen/>
     </View>
