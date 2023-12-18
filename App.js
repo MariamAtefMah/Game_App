@@ -1,12 +1,14 @@
 import React from "react";
 import { useCallback } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 
+// images name cannot have spaces.
 //(./Components) means we go to antother folder in the same directory.
 import Header from "./Components/Header";
 import StartGameScreen from "./Screens/StartGameScreen";
+
 /*
 // Maximallian method to decleare fonts
 const fetchFonts = () => {
@@ -42,7 +44,8 @@ export default function App() {
   return (
     <View style={styles.container} onLayout={onLayoutRootView}>
       <Header title="Guess a Number"/>
-      <StartGameScreen/>
+      <Image style={styles.image} source={require('./assets/BooksCover.jpg')}/>
+      <StartGameScreen />
     </View>
   );
 }
@@ -50,5 +53,11 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  image: {
+    width: 100,
+    height: 100,
+    //marginHorizontal: 100,
+    //marginVertical: 100,
   },
 });
