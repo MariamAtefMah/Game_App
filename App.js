@@ -5,6 +5,7 @@ import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 
 // images name cannot have spaces.
+// to add image from google right click then choose open image in new tab then copy uri
 //(./Components) means we go to antother folder in the same directory.
 import Header from "./Components/Header";
 import StartGameScreen from "./Screens/StartGameScreen";
@@ -46,8 +47,10 @@ export default function App() {
       <View style={styles.imageContainer}>
         <Image
           style={styles.image}
-          source={require("./assets/BooksCover.jpg")}
+          //source={require("./assets/BooksCover.jpg")}
           resizeMode="cover"
+          source={{uri: 'https://images.pexels.com/photos/312839/pexels-photo-312839.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'}}
+          //fadeDuration={100}
         />
       </View>
       <StartGameScreen />
