@@ -1,8 +1,8 @@
 import React from "react";
-import { useCallback } from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
-import { useFonts } from 'expo-font';
-import * as SplashScreen from 'expo-splash-screen';
+import { useCallback } from "react";
+import { StyleSheet, Text, View, Image } from "react-native";
+import { useFonts } from "expo-font";
+import * as SplashScreen from "expo-splash-screen";
 
 // images name cannot have spaces.
 //(./Components) means we go to antother folder in the same directory.
@@ -24,11 +24,10 @@ const fetchFonts = () => {
 SplashScreen.preventAutoHideAsync();
 
 export default function App() {
-
   const [fontsLoaded] = useFonts({
-    'Afacad-Bold': require('./assets/fonts/Afacad-Bold.ttf'),
-    'Afacad-Italic': require('./assets/fonts/Afacad-Italic.ttf'),
-    'Afacad-Regular': require('./assets/fonts/Afacad-Regular.ttf'),
+    "Afacad-Bold": require("./assets/fonts/Afacad-Bold.ttf"),
+    "Afacad-Italic": require("./assets/fonts/Afacad-Italic.ttf"),
+    "Afacad-Regular": require("./assets/fonts/Afacad-Regular.ttf"),
   });
 
   const onLayoutRootView = useCallback(async () => {
@@ -43,10 +42,14 @@ export default function App() {
 
   return (
     <View style={styles.container} onLayout={onLayoutRootView}>
-      <Header title="Guess a Number"/>
-      <Image style={styles.image} 
-        source={require('./assets/BooksCover.jpg')} 
-        resizeMode="cover"/>
+      <Header title="Guess a Number" />
+      <View style={styles.imageContainer}>
+        <Image
+          style={styles.image}
+          source={require("./assets/BooksCover.jpg")}
+          resizeMode="cover"
+        />
+      </View>
       <StartGameScreen />
     </View>
   );
@@ -56,9 +59,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  image: {
-    width: '100%',
+  imageContainer: {
+    width: "100%",
     height: 100,
+    borderRadius: 200,
+    borderWidth: 2,
+    borderColor: 'black',
+    overflow: 'hidden',
+  },
+  image: {
+    width: "100%",
+    height: '100%',
+    borderRadius: 200,
     //marginHorizontal: 100,
     //marginVertical: 100,
   },
