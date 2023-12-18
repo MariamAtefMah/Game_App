@@ -44,7 +44,9 @@ export default function App() {
   return (
     <View style={styles.container} onLayout={onLayoutRootView}>
       <Header title="Guess a Number"/>
-      <Image style={styles.image} source={require('./assets/BooksCover.jpg')}/>
+      <Image style={styles.image} 
+        source={require('./assets/BooksCover.jpg')} 
+        resizeMode="cover"/>
       <StartGameScreen />
     </View>
   );
@@ -55,7 +57,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   image: {
-    width: 100,
+    width: '100%',
     height: 100,
     //marginHorizontal: 100,
     //marginVertical: 100,
