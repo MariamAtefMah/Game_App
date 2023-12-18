@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, StyleSheet, Text, TextInput, View } from "react-native";
+import {Ionicons} from '@expo/vector-icons' //how to import icons
 
 //(../Components) means we go back one step to enter another folder in the same directory.
 import Colors from "../Components/Constants/Colors";
@@ -13,8 +14,8 @@ const StartGameScreen = (Props) => {
         <Text>Select a Number</Text>
         <TextInput keyboardType="numeric"/>
         <View style={styles.buttonConatianer}>
-            <Button title="Reset" onPress={() => {}} color={Colors.accent}/>
-            <MainButton onPress={() => {}}>Confrim</MainButton>
+          <MainButton onPress={() => {}}>Reset</MainButton>
+          <MainButton onPress={() => {}}><Ionicons name="checkmark-outline" size={22} /></MainButton>
         </View>
       </View>
     </View>
