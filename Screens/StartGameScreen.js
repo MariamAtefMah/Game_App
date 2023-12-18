@@ -3,6 +3,7 @@ import { Button, StyleSheet, Text, TextInput, View } from "react-native";
 
 //(../Components) means we go back one step to enter another folder in the same directory.
 import Colors from "../Components/Constants/Colors";
+import MainButton from "../Components/MainButton";
 
 const StartGameScreen = (Props) => {
   return (
@@ -13,7 +14,7 @@ const StartGameScreen = (Props) => {
         <TextInput keyboardType="numeric"/>
         <View style={styles.buttonConatianer}>
             <Button title="Reset" onPress={() => {}} color={Colors.accent}/>
-            <Button title="Confirm" onPress={() => {}} color={Colors.primary}/>
+            <MainButton onPress={() => {}}>Confrim</MainButton>
         </View>
       </View>
     </View>
