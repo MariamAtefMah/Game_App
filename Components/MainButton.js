@@ -11,15 +11,21 @@ import Colors from "./Constants/Colors";
 
 const MainButton = (Props) => {
   return (
-    <TouchableOpacity onPress={Props.onPress}>
-      <View style={styles.button}>
-        <Text style={styles.buttonText}>{Props.children}</Text>
-      </View>
-    </TouchableOpacity>
+    <View style={styles.buttonContainer}>
+      <TouchableOpacity onPress={Props.onPress}>
+        <View style={styles.button}>
+          <Text style={styles.buttonText}>{Props.children}</Text>
+        </View>
+      </TouchableOpacity>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
+  buttonContainer: {
+    borderRadius: 25,
+    overflow: 'hidden',
+  },
   button: {
     backgroundColor: Colors.primary,
     paddingVertical: 12,

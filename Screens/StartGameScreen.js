@@ -12,7 +12,7 @@ const StartGameScreen = (Props) => {
       <Text style={styles.title}>Start a New Game!</Text>
       <View style={styles.inputContainer}>
         <Text>Select a Number</Text>
-        <TextInput keyboardType="numeric"/>
+        <TextInput keyboardType="numeric" placeholder="_____"/>
         <View style={styles.buttonConatianer}>
           <MainButton onPress={() => {}}>Reset</MainButton>
           <MainButton onPress={() => {}}><Ionicons name="checkmark-outline" size={22} /></MainButton>
