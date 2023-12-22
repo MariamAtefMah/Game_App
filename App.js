@@ -1,6 +1,6 @@
 import React from "react";
 import { useCallback } from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, SafeAreaView } from "react-native";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 
@@ -42,7 +42,7 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container} onLayout={onLayoutRootView}>
+    <SafeAreaView style={styles.container} onLayout={onLayoutRootView}>
       <Header title="Guess a Number" />
       <View style={styles.imageContainer}>
         <Image
@@ -54,7 +54,7 @@ export default function App() {
         />
       </View>
       <StartGameScreen />
-    </View>
+    </SafeAreaView>
   );
 }
 
